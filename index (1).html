@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGM's College of Engineering, Nanded</title>
+    <link rel="shortcut icon" href="fevicon.jpeg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #004a8f;
+            --primary-dark: #003366;
+            --secondary: #e74c3c;
+            --accent: #f1c40f;
+            --light: #f8f9fa;
+            --dark: #000000;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+      a, u {
+            text-decoration: none;
+
+          }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: #fff;
+            background-color: #313970;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    flex-direction: row;
+            padding: 1rem 2rem;
+            margin: 0 auto;
+        }
+        .header-container1 {
+            display: flex;
+            justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    flex-direction: row;
+            padding: 1rem 2rem;
+            margin: 0 auto;
+        }
+     .header-container li {
+    float: left;
+    list-style-type: none;
+    padding-left: 20px;
+}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-toggle:hover {
+            color: var(--secondary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+flex-direction: row; 
+flex-wrap: wrap; 
+align-items: flex-end; 
+justify-content: space-around; 
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link i {
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            float: left;
+            
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            border-radius: 0.5rem;
+            padding: 0px;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+            
+        }
+
+        .dropdown-item {
+            padding: 0rem 1rem;
+        }
+
+        .dropdown-item .nav-link {
+            color: var(--gray);
+        }
+
+        .dropdown-item .nav-link:hover {
+            color: var(--primary);
+            padding-left: 0.3rem;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-left: 0.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-size: cover;
+            background-position: center;
+            animation: slideShow 24s infinite;
+        }
+
+        .hero-slide:nth-child(1) {
+            background-image: url('slide1.jpg');
+            animation-delay: 0s;
+        
+        }
+
+        .hero-slide:nth-child(2) {
+            background-image: url('slide2.jpg');
+            animation-delay: 8s;
+        }
+
+        .hero-slide:nth-child(3) {
+            background-image: url('slide3.jpg');
+            animation-delay: 16s;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            background-image: url('slide4.jpg');
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgb(18 25 31 / 50%), rgba(0, 74, 143, 0.6));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Content */
+        .main {
+            padding: 4rem 0;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .mission-vision {
+            background-color: var(--light);
+        }
+
+        .mv-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .mv-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .mv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .mv-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .mv-title i {
+            color: var(--accent);
+        }
+
+        .mv-list {
+            list-style-type: none;
+        }
+
+        .mv-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .mv-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Quick Links */
+        .quick-links {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 3rem 0;
+        }
+
+        .quick-links .section-title {
+            color: var(--white);
+        }
+
+        .quick-links .section-title::after {
+            background-color: var(--accent);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .link-card {
+            background-color: var(--white);
+            color: var(--primary);
+            padding: 1.5rem 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .link-card:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .link-card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .link-card:hover i {
+            color: var(--white);
+        }
+
+        .link-card span {
+            display: block;
+            font-weight: 600;
+        }
+
+        /* News & Events */
+        .news-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .news-card {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.1);
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-date {
+            display: block;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .news-excerpt {
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+
+        .read-more {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .footer-about {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-links i {
+            font-size: 0.8rem;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .footer-contact-icon {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-top: 0.2rem;
+        }
+
+        .footer-contact-text {
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--secondary);
+            color: var(--white);
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes slideShow {
+            0%, 100% { opacity: 0; }
+            10%, 30% { opacity: 1; }
+            40% { opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 992px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: var(--transition);
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+
+            .nav-link {
+                justify-content: center;
+                padding: 1rem;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background-color: transparent;
+                padding: 0;
+                display: none;
+                width: 100%;
+            }
+
+            .dropdown-menu.active {
+                display: block;
+            }
+
+            .dropdown-item {
+                padding: 0.5rem 0;
+            }
+
+            .dropdown-menu .dropdown-menu {
+                position: static;
+                margin-left: 1rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content,
+            .mv-container,
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+            }
+            .header-container1 {
+                padding: 1rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        #sclass {
+    display: none;
+}
+
+/* Show the p tag only on larger screens (e.g., desktop) */
+@media (min-width: 992px) {
+    #sclass {
+        display: block;
+    }
+}
+.fa-bars, .fa-times {
+    position: fixed;
+    top: 50px;
+    right: 15px;
+    padding: 5px;
+    z-index: 1000;
+    cursor: pointer; /* Optional: Changes cursor to pointer */
+}
+#menu-trigger {
+    position: fixed;
+    top: 310px;
+    left: 0px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+    color: #ffffff;
+    background-color: darkslateblue;
+    transition: left 0.3s ease;
+    border-radius: 10px;
+  }
+  #menu-trigger.move-right {
+    left: 250px; /* slightly more than sidebar width */
+  }
+  #sidebar {
+    /* existing styles */
+    overflow-y: scroll; /* still scrollable */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  #sidebar::-webkit-scrollbar {
+    width: 2px;  /* Chrome, Safari */
+    background: transparent; /* Optional: no background */
+  }
+  
+  #sidebar {
+    position: fixed;
+    top: 194px;
+    left: -250px; /* hidden */
+    width: 250px;
+    height: 45%;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    background-color: #56408e;
+    border-radius: 0px 50px 50px 0px;
+  }
+  
+  #sidebar.active {
+    left: 0;
+  }
+  
+  #sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  #menu-trigger:hover + #sidebar,
+#sidebar:hover {
+  left: 0;
+}
+
+/* Shift dots when hovering */
+#menu-trigger:hover {
+
+  display: none
+}
+  #sidebar ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  #sidebar ul li a:hover {
+    background-color: #575757;
+  }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container1">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="MGM College of Engineering Logo">
+                <span class="logo-text">MGM's College of Engineering</span>
+            </a>
+            <p id="sclass">Affiliated to Dr. BATU. Loners, Accredited by NAAC(2024),
+                NBA Accredited (2024-2027), Approved by AICTE, New Delhi.</p>
+        </div><hr style="height: 5px;background-color: #212529;">
+        <div class="header-container" style="padding: 0px;margin: 0px;    background-color: white;">
+
+            <button class="nav-toggle" id="navToggle" style="z-index: 1;">
+                <i class="fas fa-bars" style="margin-left: 100px;"></i>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            About <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="about.html" class="nav-link">About Us</a></li>
+                            <li class="dropdown-item"><a href="mission-objective.html" class="nav-link">Vision & Mission</a></li>
+                            <li class="dropdown-item"><a href="core-values-ethics.html" class="nav-link">Core Values & Ethics</a></li>
+                            <li class="dropdown-item"><a href="accreditations-affiliations.html" class="nav-link">Accreditations / Affiliations</a></li>
+                            <li class="dropdown-item"><a href="chairman-desk.html" class="nav-link">Chairman's Desk</a></li>
+                            <li class="dropdown-item"><a href="director-desk.html" class="nav-link">Director's Desk</a></li>
+                            <li class="dropdown-item"><a href="courses.html" class="nav-link">Courses Offered</a></li>
+                            <li class="dropdown-item"><a href="history.html" class="nav-link">History</a></li>
+                            <li class="dropdown-item"><a href="local-management-committee.html" class="nav-link">Governing Council</a></li>
+                            <li class="dropdown-item"><a href="press-coverage.html" class="nav-link">Press Coverage</a></li>
+                            <li class="dropdown-item"><a href="location.html" class="nav-link">Location</a></li>
+                            <li class="dropdown-item"><a href="service-rules.html" class="nav-link">Service Rules</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Campus <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="campus.html" class="nav-link">Campus Info</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Academics <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="applied-science-humanities/profile.html" class="nav-link">Applied Science & Humanities</a></li>
+                            <li class="dropdown-item"><a href="civil-engineering/profile.html" class="nav-link">Civil Engineering</a></li>
+                            <li class="dropdown-item"><a href="computer-science-engineering/profile.html" class="nav-link">Computer Science & Engineering</a></li>
+                            <li class="dropdown-item"><a href="electronincs-telecommunication-engineering/profile.html" class="nav-link">Electronics & Telecommunication Engineering</a></li>
+                            <li class="dropdown-item"><a href="information-technology/profile.html" class="nav-link">Information Technology</a></li>
+                            <li class="dropdown-item"><a href="mechanical-engineering/profile.html" class="nav-link">Mechanical Engineering</a></li>
+                            <li class="dropdown-item"><a href="courses-humanvalues-professionalethics/profile.html" class="nav-link">Courses in Human Values & Professional Ethics</a></li>
+                            <li class="dropdown-item"><a href="trainingandplacement/profile.html" class="nav-link">Training and Placement Cell</a></li>
+                            <li class="dropdown-item"><a href="Innovation-Entrepreneurship-Development-Cell/profile.html" class="nav-link">Innovation & Entrepreneurship Development Cell</a></li>
+                            <li class="dropdown-item"><a href="research/profile.html" class="nav-link">Research</a></li>
+                            <li class="dropdown-item"><a href="academic-calendar.html" class="nav-link">Academic Calendar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Cells & Committees <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="cells-committees4d7b.html?section=AcademicCell" class="nav-link">Academic Cell</a></li>
+                            <li class="dropdown-item"><a href="cells-committeesc1b1.html?section=AdmissionCell" class="nav-link">Admission Cell</a></li>
+                            <li class="dropdown-item"><a href="cells-committees7af5.html?section=AntiRaggingSquad" class="nav-link">Anti Ragging Squad</a></li>
+                            <li class="dropdown-item"><a href="cells-committeesb062.html?section=AntiRaggingCommittee" class="nav-link">Anti Ragging Committee</a></li>
+                            <li class="dropdown-item"><a href="cells-committeesef6c.html?section=CASERPCell" class="nav-link">CASERP Cell</a></li>
+                            <li class="dropdown-item"><a href="cells-committees5f13.html?section=CollegeDevelopmentCommittee" class="nav-link">College Development Committee</a></li>
+                            <li class="dropdown-item"><a href="cells-committees5bfb.html?section=CulturalCommittee" class="nav-link">Cultural Committee</a></li>
+                            <li class="dropdown-item"><a href="cells-committees6df9.html?section=ExaminationCell" class="nav-link">Examination Cell</a></li>
+                            <li class="dropdown-item"><a href="cells-committees297d.html?section=InternalComplaintCommittee" class="nav-link">Internal Complaint Committee - ICC</a></li>
+                            <li class="dropdown-item"><a href="cells-committees4126.html?section=SC_STCell" class="nav-link">SC_ST Cell</a></li>
+                            <li class="dropdown-item"><a href="cells-committeescdab.html?section=StudentGrievanceRedressalCommittee" class="nav-link">Student Grievance Redressal Committee (SGRC)</a></li>
+                            <li class="dropdown-item"><a href="cells-committees8b75.html?section=TrainingAndPlacementCell" class="nav-link">Training and Placement Cell</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Admission <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="under-graduate.html" class="nav-link">Under Graduate (B. Tech)</a></li>
+                            <li class="dropdown-item"><a href="post-graduate.html" class="nav-link">Post Graduate (M. Tech)</a></li>
+                            <li class="dropdown-item"><a href="fee-structure.html" class="nav-link">Fee Structure</a></li>
+                            <li class="dropdown-item"><a href="student-information.html" class="nav-link">Student Information</a></li>
+                            <li class="dropdown-item"><a href="undertaking.html" class="nav-link">Undertaking</a></li>
+                            <li class="dropdown-item"><a href="InformationBrochureAcademicYear2020-21.html" class="nav-link">Information Brochure Academic Year 2024-25</a></li>
+                            <li class="dropdown-item"><a href="https://www.vidyalakshmi.co.in/" class="nav-link">VidyaLaxmi (Educational Loan) Portal</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Facilities <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="classrooms.html" class="nav-link">Classrooms</a></li>
+                            <li class="dropdown-item"><a href="astronomy-space-technology.html" class="nav-link">Astronomy and Space Technology</a></li>
+                            <li class="dropdown-item"><a href="hostels.html" class="nav-link">Hostels</a></li>
+                            <li class="dropdown-item"><a href="infrastructure.html" class="nav-link">Infrastructure</a></li>
+                            <li class="dropdown-item"><a href="library.html" class="nav-link">Library</a></li>
+                            <li class="dropdown-item"><a href="laboratories.html" class="nav-link">Laboratories</a></li>
+                            <li class="dropdown-item"><a href="sports.html" class="nav-link">Sports</a></li>
+                            <li class="dropdown-item"><a href="remote-center.html" class="nav-link">Remote Center</a></li>
+                            <li class="dropdown-item"><a href="https://ekeeda.com/" target="_blank" class="nav-link">Ekeeda</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Alumni <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="alumni/registration.html" class="nav-link">Alumni Registration</a></li>
+                            <li class="dropdown-item"><a href="alumni/speaks.html" class="nav-link">Alumni Speaks</a></li>
+                            <li class="dropdown-item"><a href="esteemed-alumni.html" class="nav-link">Esteemed Alumni</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Student Activities <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item dropdown">
+                                <a href="#" class="nav-link">Academic <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="cesa.html" class="nav-link">CESA</a></li>
+                                    <li class="dropdown-item"><a href="cuc.html" class="nav-link">CUC</a></li>
+                                    <li class="dropdown-item"><a href="eta.html" class="nav-link">ETA</a></li>
+                                    <li class="dropdown-item"><a href="csi.html" class="nav-link">CSI / IEI</a></li>
+                                    <li class="dropdown-item"><a href="mesa.html" class="nav-link">MESA</a></li>
+                                    <li class="dropdown-item"><a href="itsa.html" class="nav-link">ITSA</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a href="#" class="nav-link">Co-curricular <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="cast-activity.html" class="nav-link">CAST Activity</a></li>
+                                    <li class="dropdown-item"><a href="open-source.html" class="nav-link">Open Source</a></li>
+                                    <li class="dropdown-item"><a href="english-language-club.html" class="nav-link">English Language Club</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a href="#" class="nav-link">Sport <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="indoor.html" class="nav-link">Achievements-Indoor</a></li>
+                                    <li class="dropdown-item"><a href="outdoor.html" class="nav-link">Achievements-Outdoor</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a href="#" class="nav-link">Cultural <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="aarohan.html" class="nav-link">Aarohan</a></li>
+                                    <li class="dropdown-item"><a href="jhankaar.html" class="nav-link">Jhankaar</a></li>
+                                    <li class="dropdown-item"><a href="synergy.html" class="nav-link">Synergy</a></li>
+                                    <li class="dropdown-item"><a href="udaan.html" class="nav-link">Udaan</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a href="#" class="nav-link">Social <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="nss.html" class="nav-link">NSS</a></li>
+                                    <li class="dropdown-item"><a href="tech-life.html" class="nav-link">Tech Life</a></li>
+                                    <li class="dropdown-item"><a href="mgm-helpline.html" class="nav-link">MGM Helpline</a></li>
+                                    <li class="dropdown-item"><a href="http://mgmcen.ac.in/pdf/UBA Report 10112024.pdf" target="_blank" class="nav-link">Unnat Bharat Abhiyan</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item dropdown">
+                                <a href="#" class="nav-link">VISIOTECH <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="visiontech-aboutus.html" class="nav-link">About us</a></li>
+                                    <li class="dropdown-item"><a href="visiontech-poster.html" class="nav-link">Visiotech Poster</a></li>
+                                    <li class="dropdown-item"><a href="http://mgmcen.ac.in/docs/VISIOTECH 2023 WEBSITE.pdf" target="_blank" class="nav-link">Visiotech report 2023</a></li>
+                                    <li class="dropdown-item"><a href="http://www.visiotech2024.info/" target="_blank" class="nav-link">VISIOTECH 2024</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item"><a href="http://mgmcen.ac.in/pdf/GDSC_MRB_5Oct2024.pdf" target="_blank" class="nav-link">GDSC</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Collaboration <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="academic-collaboration.html" class="nav-link">Academic</a></li>
+                            <li class="dropdown-item"><a href="corporate-industries.html" class="nav-link">Corporate & Industries</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            Download <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="download/current-advertisement.html" class="nav-link">Current Advertisement</a></li>
+                            <li class="dropdown-item"><a href="download/nirf.html" class="nav-link">NIRF</a></li>
+                            <li class="dropdown-item"><a href="download/shikshan-shulk-samiti.html" class="nav-link">Fees Regulatory Authority</a></li>
+                            <li class="dropdown-item"><a href="download/audited-statements.html" class="nav-link">Audited Statements</a></li>
+                            <li class="dropdown-item"><a href="download/tender-notice.html" class="nav-link">Tender</a></li>
+                            <li class="dropdown-item"><a href="download/other.html" class="nav-link">Other</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+        </div>
+        <div id="menu-trigger">&#8942;</div>
+
+<!-- Sidebar Menu -->
+<div id="sidebar">
+  <ul>
+    <li><a href="chairman-desk.html">Chairman's Desk</a></li>
+    <li><a href="director-desk.html">Director's Desk</a></li>
+    <li><a href="trainingandplacement/profile.html">Placements</a></li>
+    <li><a href="trainingandplacement/achievement.html">Achievements</a></li>
+    <li><a href="photogallery.html">Photo Gallery</a></li>
+    <li><a href="download/nirf.html">NIRF</a></li>
+    <li><a href="mandatory-disclosure.html">Mandatory Disclosure</a></li>
+    <li><a href="IQAC.html">IQAC</a></li>
+    <li><a href="swayam-nptel.html">SWAYAM-NPTEL</a></li>
+    <!-- Add more here; scroll will work -->
+  </ul>
+  <script>
+    const menuTrigger = document.getElementById("menu-trigger");
+    const sidebar = document.getElementById("sidebar");
+    
+    menuTrigger.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      menuTrigger.classList.toggle("move-right");
+    });
+    
+    // Hide sidebar when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!sidebar.contains(e.target) && !menuTrigger.contains(e.target)) {
+        sidebar.classList.remove("active");
+        menuTrigger.classList.toggle("move-right");
+      }
+    });
+    
+    </script>
+</div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">Welcome to MGM's College of Engineering</h1>
+            <p class="hero-subtitle fade-in">Providing quality Engineering education to cater the needs of industry and society with a multidisciplinary approach on a sustainable basis.</p>
+            <a href="about.html" class="btn btn-outline fade-in">Explore More</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- About Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Mahatma Gandhi Mission, that started its journey in a modest way with a rural health care center at Nila and a hospital in Nanded: has emerged as a 5000-member family with more than 50 educational organizations, health care centers and social welfare units functioning under its umbrella.</p>
+                        <p>The MGM's College of Engineering at Nanded was established in 1983, with the objective of imparting quality education in the field of Engineering and Technology. The college is approved by AICTE, New Delhi and is affiliated to Dr. Babasaheb Ambedkar Technological University, Lonere.</p>
+                        <a href="about.html" class="btn">Read More</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="slide4.jpg" alt="MGM College Campus">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="section mission-vision">
+            <div class="container">
+                <h2 class="section-title">Our Vision & Mission</h2>
+                <div class="mv-container">
+                    <div class="mv-card">
+                        <h3 class="mv-title"><i class="fas fa-eye"></i> Vision</h3>
+                        <p>To be one of the leading Institutions for Engineering education developing proficient Engineers with global acceptance in the service of mankind.</p>
+                    </div>
+                    <div class="mv-card">
+                        <h3 class="mv-title"><i class="fas fa-bullseye"></i> Mission</h3>
+                        <ul class="mv-list">
+                            <li>Providing quality Engineering education to cater the needs of industry and society with multidisciplinary approach on sustainable basis.</li>
+                            <li>Developing globally competent Engineers having ability to solve real-life problems addressing environmental issues through technological advancements.</li>
+                            <li>Inculcating professionalism, teamwork, research, innovation and entrepreneurship, maintaining the spirit of continuous learning.</li>
+                            <li>Fostering the collaboration with industry, academia, research organizations, experts and alumni.</li>
+                            <li>Imparting employability skills, nurturing leadership qualities with ethical and social values among students.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links Section -->
+
+
+        <!-- News & Events Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">News & Events</h2>
+                <div class="news-container">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="slide3.jpg" alt="News Image">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">June 15, 2024</span>
+                            <h3 class="news-title">Vacancy Notice Extended Round</h3>
+                            <p class="news-excerpt">The vacancy notice for various positions has been extended until further notice.</p>
+                            <a href="newsdetail5f62.html?newsid=120" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="slide1.jpg" alt="News Image">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">June 10, 2024</span>
+                            <h3 class="news-title">Admission for B Tech & M Tech DSE</h3>
+                            <p class="news-excerpt">Admissions open for B.Tech and M.Tech Direct Second Year Entry programs.</p>
+                            <a href="newsdetail4e19.html?newsid=119" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="slide2.jpg" alt="News Image">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">June 5, 2024</span>
+                            <h3 class="news-title">ACAP NOTICE FOR THE DIRECT SECOND YEAR ADMISSION ROUND</h3>
+                            <p class="news-excerpt">Important notice regarding ACAP for Direct Second Year admissions.</p>
+                            <a href="newsdetaild8a1.html?newsid=112" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="slide4.jpg" alt="News Image">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">May 28, 2024</span>
+                            <h3 class="news-title">First Year M Tech ACAP admission Round</h3>
+                            <p class="news-excerpt">Details about the ACAP admission round for first year M.Tech students.</p>
+                            <a href="newsdetail2ce0.html?newsid=110" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="section quick-links">
+        <div class="container">
+            <h2 class="section-title">Quick Links</h2>
+            <div class="links-grid">
+                <a href="http://mgmerp.ac.in/" class="link-card" target="_blank">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>CASERP</span>
+                </a>
+                <a href="https://www.vmedulife.com/public/auth/#/login/mgm-cen-nanded" class="link-card" target="_blank">
+                    <i class="fas fa-book-open"></i>
+                    <span>OBE</span>
+                </a>
+                <a href="https://accounts.google.com/ServiceLogin?service=mail&amp;continue=https://mail.google.com/mail/" class="link-card" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                    <span>Mail</span>
+                </a>
+                <a href="https://dbatu.ac.in/" class="link-card" target="_blank">
+                    <i class="fas fa-university"></i>
+                    <span>DBATU</span>
+                </a>
+                <a href="http://www.ieeexplore.ieee.org/xpl/periodicals.jsp" class="link-card" target="_blank">
+                    <i class="fas fa-file-alt"></i>
+                    <span>IEEE</span>
+                </a>
+                <a href="http://nptel.ac.in/" class="link-card" target="_blank">
+                    <i class="fas fa-video"></i>
+                    <span>NPTEL</span>
+                </a>
+                <a href="https://www.youth4work.com/onlinetalenttest" class="link-card" target="_blank">
+                    <i class="fas fa-brain"></i>
+                    <span>Skill Test</span>
+                </a>
+                <a href="viewnews.html" class="link-card">
+                    <i class="fas fa-newspaper"></i>
+                    <span>News</span>
+                </a>
+                <a href="download/tender-notice.html" class="link-card">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Tender</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="MGM College Logo">
+                        <span class="footer-logo-text">MGM's College of Engineering</span>
+                    </div>
+                    <p class="footer-about">
+                        MGM's College of Engineering at Nanded was established in 1983, with the objective of imparting quality education in the field of Engineering and Technology.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="courses.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                        <li><a href="admission.html"><i class="fas fa-chevron-right"></i> Admission</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Important Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://dbatu.ac.in/" target="_blank"><i class="fas fa-chevron-right"></i> DBATU</a></li>
+                        <li><a href="https://www.aicte-india.org/" target="_blank"><i class="fas fa-chevron-right"></i> AICTE</a></li>
+                        <li><a href="https://www.ugc.ac.in/" target="_blank"><i class="fas fa-chevron-right"></i> UGC</a></li>
+                        <li><a href="https://www.mhrd.gov.in/" target="_blank"><i class="fas fa-chevron-right"></i> MHRD</a></li>
+                        <li><a href="https://www.maharashtra.gov.in/" target="_blank"><i class="fas fa-chevron-right"></i> Maharashtra Govt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            MGM's College of Engineering, Nanded - 431605, Maharashtra, India
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            +91-2462-229001, 229002
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            principal@mgmcen.ac.in
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MGM's College of Engineering, Nanded. All Rights Reserved.</p>
+                <p>Developed by Web Dreamworks (India) Pvt. Ltd.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Dropdown Menu for Mobile
+        const dropdownToggles = document.querySelectorAll('.dropdown > .nav-link');
+
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    const dropdownMenu = this.nextElementSibling;
+                    dropdownMenu.classList.toggle('active');
+                    
+                    // Rotate chevron icon
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.style.transform = dropdownMenu.classList.contains('active') 
+                            ? 'rotate(180deg)' 
+                            : 'rotate(0)';
+                    }
+                }
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-item') && window.innerWidth <= 992) {
+                const openDropdowns = document.querySelectorAll('.dropdown-menu.active');
+                openDropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+                
+                // Reset all chevron icons
+                const icons = document.querySelectorAll('.dropdown > .nav-link i');
+                icons.forEach(icon => {
+                    icon.style.transform = 'rotate(0)';
+                });
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Animation on scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
